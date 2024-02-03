@@ -1,33 +1,18 @@
 import { useState } from "react";
 import { Button } from "../button/component";
 
-export const ButtonCount = () => {
+export const ButtonCount = ({minValue, maxValue}) => {
     const [count, setCount] = useState(0);
-    const [disabledMin, setDisabledMin] = useState(true);
-    const [disabledMax, setDisabledMax] = useState(false);
 
     return <div>
             <Button text="-" 
-                    onClick={() => {
-                        if (count === 0){
-                                setDisabledMin(true);
-                                setDisabledMax(false);
-                        } else{
-                                setCount(count-1)
-                                setDisabledMax(false);
-                        }}}
-                    disabled={disabledMin}
+                    onClick={() => {setCount(count - 1)}}
+                    disabled={count === minValue}
                     />
             {count}
             <Button text="+"
-                    onClick={() => {
-                        if (count === 5){
-                                setDisabledMax(true);
-                                setDisabledMin(false);
-                        }else{
-                                setCount(count+1)
-                                setDisabledMin(false);
-                        }}}
-                    disabled={disabledMax}/>
+                    onClick={() => {setCount(count + 1)}}
+                    disabled={count === maxValue}
+                    />
         </div> 
 };
