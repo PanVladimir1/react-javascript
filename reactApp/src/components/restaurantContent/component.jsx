@@ -1,4 +1,5 @@
 import { Menu } from "../menu/component";
+import { ReviewForm } from "../review-form/component";
 import { Reviews } from "../reviews/component";
 import styles from './styles.module.scss'
 
@@ -9,5 +10,6 @@ export const RestaurantContent = ({restaurant}) => {
                 <Menu menu={restaurant.menu}/>
                 <h3>Reviews</h3>
                 <Reviews reviews={restaurant.reviews}/>
-            </div>
+                <ReviewForm />
+            </div>            
 };
