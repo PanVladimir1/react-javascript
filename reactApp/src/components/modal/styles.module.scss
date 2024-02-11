@@ -1,0 +1,16 @@
+.root {
+    position: absolute;
+    top: 50th;
+    left: 50vw;
+
+    transform: translate(-50%, -50%);
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 255, 0.445);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
