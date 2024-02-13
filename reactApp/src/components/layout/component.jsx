@@ -3,8 +3,9 @@ import { Header } from "../header/component";
 
 export const Layout = ({ children }) => {
     return <div>
-           <Header/>
-           {children}
-           <Footer/>
+            <Header/>
+            {children}
+            <Footer/>
+            <div id="modal-container"/>
            </div>
 };

@@ -1,5 +1,6 @@
-import { useReducer } from 'react';
+import { useContext, useReducer } from 'react';
 import styles from './styles.module.scss'
+import { UserContext } from '../contexts/user';
 
 const INITIAL_VALUES = {
     name: "",
@@ -34,14 +35,11 @@ const reducer = (state, {type, payload}) => {
 
 export const ReviewForm = () => {
     const [form, dispatch] = useReducer(reducer, INITIAL_VALUES);
+    const {user} = useContext(UserContext);
 
     return <div className={styles.root}>
         <div className={styles.field}>
-            <label htmlFor="name">Name: </label>
-            <input id="name" 
-                   type="text" 
-                   value={form.name} 
-                   onChange={(event) => dispatch({type: 'setName', payload: event.target.value})}/>
+            {user}
         </div>
         <div className={styles.field}>
             <label htmlFor="text">Text: </label>
